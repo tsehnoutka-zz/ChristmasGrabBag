@@ -1,0 +1,85 @@
+#ifdef defined(_WIN32) || defined(WIN32)
+
+#include <stdio.h>
+
+
+int send_email( char* szToAddr,  char* szBody);
+static int sendmail(const char *from, const char *to, const char *subject, const char *body, const char *hostname, const int port);
+
+// Basic error checking for send() and recv() functions
+void Check(int iStatus, char *szFunction)
+{
+  if((iStatus != SOCKET_ERROR) && (iStatus))
+    return;
+
+  cerr << "Error during call to " << szFunction << ": " << iStatus << " - " << GetLastError() << endl;
+}
+
+static void sendmail_write(const int  sock, const char *str, const char *arg)
+{
+    char buf[4096];
+
+    if (arg != NULL)
+        snprintf(buf, sizeof(buf), str, arg);
+    else
+        snprintf(buf, sizeof(buf), str);
+
+    send(sock, buf, strlen(buf), 0);
+}
+
+static int sendmail(
+                const char *from,
+                const char *to,
+                const char *subject,
+                const char *body,
+                const char *hostname,
+                const int   port
+            ) {
+
+    struct hostent *host;
+    struct sockaddr_in saddr_in;
+    int sock = 0;
+
+
+	WSADATA wsaData;
+	if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
+		return -1;
+	}
+
+
+    sock = socket(AF_INET, SOCK_STREAM, 0);
+	host = gethostbyname(hostname);
+
+	saddr_in.sin_family      = AF_INET;
+	saddr_in.sin_port        = htons((u_short)port);
+	saddr_in.sin_addr.s_addr = 0;
+
+	memcpy((char*)&(saddr_in.sin_addr), host->h_addr, host->h_length);
+
+	int retConVal = connect(sock, (struct sockaddr*)&saddr_in, sizeof(saddr_in));
+	if ( -1 == retConVal) {
+		return -2;
+	}
+
+    sendmail_write(sock, "HELO %s\n",       from);    // greeting
+    sendmail_write(sock, "MAIL FROM: %s\n", from);    // from
+    sendmail_write(sock, "RCPT TO: %s\n",   to);      // to
+    sendmail_write(sock, "DATA\n",          NULL);    // begin data
+
+    // next comes mail headers
+    sendmail_write(sock, "From: %s\n",      from);
+    sendmail_write(sock, "To: %s\n",        to);
+    sendmail_write(sock, "Subject: %s\n",   subject);
+
+    sendmail_write(sock, "\n",              NULL);
+
+    sendmail_write(sock, "%s\n",            body);    // data
+
+    sendmail_write(sock, ".\n",             NULL);    // end data
+    sendmail_write(sock, "QUIT\n",          NULL);    // terminate
+
+    close(sock);
+
+    return 0;
+}
+#endif  //  end ifdef WIN

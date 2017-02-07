@@ -1,0 +1,17 @@
+/*
+ ============================================================================
+ Name        : PrintToPrinter.c
+ Author      : Tim Edwards
+ Version     :
+ Copyright   : BE NICE!
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	puts("Print To Printer"); /* prints Print To Printer */
+	return EXIT_SUCCESS;
+}

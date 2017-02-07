@@ -1,0 +1,6 @@
+21:25:15 **** Incremental Build of configuration Debug for project PrintToPrinter ****
+make all 
+make: Nothing to be done for `all'.
+
+21:25:15 Build Finished (took 71ms)
+

@@ -1,0 +1,15 @@
+19:04:14 **** Incremental Build of configuration Debug for project ChristmasGrabBag ****
+make all 
+Building file: ../src/ChristmasGrabBag.c
+Invoking: GCC C Compiler
+gcc -I"/home/tedwards/workspace/ChristmasGrabBag" -I/home/tedwards/workspace/ChristmasGrabBag/src -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ChristmasGrabBag.d" -MT"src/ChristmasGrabBag.o" -o "src/ChristmasGrabBag.o" "../src/ChristmasGrabBag.c"
+Finished building: ../src/ChristmasGrabBag.c
+ 
+Building target: ChristmasGrabBag
+Invoking: GCC C Linker
+gcc  -o "ChristmasGrabBag"  ./src/ChristmasGrabBag.o   
+Finished building target: ChristmasGrabBag
+ 
+
+19:04:14 Build Finished (took 111ms)
+

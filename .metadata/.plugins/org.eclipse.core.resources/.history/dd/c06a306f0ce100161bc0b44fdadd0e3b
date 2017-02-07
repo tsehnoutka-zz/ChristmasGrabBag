@@ -1,0 +1,17 @@
+/*
+ ============================================================================
+ Name        : SendMail.c
+ Author      : Tim Edwards
+ Version     :
+ Copyright   : BE NICE!
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	puts("Send Mail"); /* prints Send Mail */
+	return EXIT_SUCCESS;
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ChristmasGrabBag/src/SendEmail.h&apos; to &apos;SendEmailWin.h&apos;" description="Rename resource &apos;SendEmail.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/SendEmail.h" name="SendEmailWin.h" stamp="1484417445545" updateReferences="true"/>
+</session>

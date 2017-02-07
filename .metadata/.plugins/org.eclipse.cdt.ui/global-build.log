@@ -1,0 +1,84 @@
+21:23:36 **** Build of configuration Debug for project PrintToPrinter ****
+make all 
+Building file: ../src/PrintToPrinter.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PrintToPrinter.d" -MT"src/PrintToPrinter.o" -o "src/PrintToPrinter.o" "../src/PrintToPrinter.c"
+../src/PrintToPrinter.c:13:20: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before numeric constant
+ const int PAGEFEED 12;
+                    ^
+../src/PrintToPrinter.c: In function ‘main’:
+../src/PrintToPrinter.c:19:74: error: ‘PAGEFEED’ undeclared (first use in this function)
+  fprintf(printer, "This is my message to the Printer from CentOS 7\n%c", PAGEFEED);
+                                                                          ^
+../src/PrintToPrinter.c:19:74: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/PrintToPrinter.o] Error 1
+21:24:34 **** Incremental Build of configuration Debug for project PrintToPrinter ****
+make all 
+Building file: ../src/PrintToPrinter.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PrintToPrinter.d" -MT"src/PrintToPrinter.o" -o "src/PrintToPrinter.o" "../src/PrintToPrinter.c"
+Finished building: ../src/PrintToPrinter.c
+ 
+Building target: PrintToPrinter
+Invoking: GCC C Linker
+gcc  -o "PrintToPrinter"  ./src/PrintToPrinter.o   
+Finished building target: PrintToPrinter
+ 
+21:25:15 **** Incremental Build of configuration Debug for project PrintToPrinter ****
+make all 
+make: Nothing to be done for `all'.
+19:00:42 **** Build of configuration Debug for project SendMail ****
+make all 
+make: Nothing to be done for `all'.
+19:01:27 **** Incremental Build of configuration Debug for project ChristmasGrabBag ****
+make all 
+Building file: ../src/ChristmasGrabBag.c
+Invoking: GCC C Compiler
+gcc -I"/home/tedwards/workspace/ChristmasGrabBag" -I/home/tedwards/workspace/ChristmasGrabBag/src -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ChristmasGrabBag.d" -MT"src/ChristmasGrabBag.o" -o "src/ChristmasGrabBag.o" "../src/ChristmasGrabBag.c"
+../src/ChristmasGrabBag.c: In function ‘main’:
+../src/ChristmasGrabBag.c:226:2: warning: ‘gets’ is deprecated (declared at /usr/include/stdio.h:638) [-Wdeprecated-declarations]
+  gets("%c",ch);
+  ^
+../src/ChristmasGrabBag.c:226:2: error: too many arguments to function ‘gets’
+In file included from /home/tedwards/workspace/ChristmasGrabBag/src/SendMailLinux.h:3:0,
+                 from ../src/ChristmasGrabBag.c:13:
+/usr/include/stdio.h:638:14: note: declared here
+ extern char *gets (char *__s) __wur __attribute_deprecated__;
+              ^
+make: *** [src/ChristmasGrabBag.o] Error 1
+19:02:14 **** Incremental Build of configuration Debug for project ChristmasGrabBag ****
+make all 
+Building file: ../src/ChristmasGrabBag.c
+Invoking: GCC C Compiler
+gcc -I"/home/tedwards/workspace/ChristmasGrabBag" -I/home/tedwards/workspace/ChristmasGrabBag/src -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ChristmasGrabBag.d" -MT"src/ChristmasGrabBag.o" -o "src/ChristmasGrabBag.o" "../src/ChristmasGrabBag.c"
+../src/ChristmasGrabBag.c: In function ‘main’:
+../src/ChristmasGrabBag.c:226:2: warning: ‘gets’ is deprecated (declared at /usr/include/stdio.h:638) [-Wdeprecated-declarations]
+  gets(ch);
+  ^
+../src/ChristmasGrabBag.c:226:2: warning: passing argument 1 of ‘gets’ makes pointer from integer without a cast [enabled by default]
+In file included from /home/tedwards/workspace/ChristmasGrabBag/src/SendMailLinux.h:3:0,
+                 from ../src/ChristmasGrabBag.c:13:
+/usr/include/stdio.h:638:14: note: expected ‘char *’ but argument is of type ‘char’
+ extern char *gets (char *__s) __wur __attribute_deprecated__;
+              ^
+Finished building: ../src/ChristmasGrabBag.c
+ 
+Building target: ChristmasGrabBag
+Invoking: GCC C Linker
+gcc  -o "ChristmasGrabBag"  ./src/ChristmasGrabBag.o   
+./src/ChristmasGrabBag.o: In function `main':
+/home/tedwards/workspace/ChristmasGrabBag/Debug/../src/ChristmasGrabBag.c:226: warning: the `gets' function is dangerous and should not be used.
+Finished building target: ChristmasGrabBag
+ 
+19:04:14 **** Incremental Build of configuration Debug for project ChristmasGrabBag ****
+make all 
+Building file: ../src/ChristmasGrabBag.c
+Invoking: GCC C Compiler
+gcc -I"/home/tedwards/workspace/ChristmasGrabBag" -I/home/tedwards/workspace/ChristmasGrabBag/src -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ChristmasGrabBag.d" -MT"src/ChristmasGrabBag.o" -o "src/ChristmasGrabBag.o" "../src/ChristmasGrabBag.c"
+Finished building: ../src/ChristmasGrabBag.c
+ 
+Building target: ChristmasGrabBag
+Invoking: GCC C Linker
+gcc  -o "ChristmasGrabBag"  ./src/ChristmasGrabBag.o   
+Finished building target: ChristmasGrabBag
+ 

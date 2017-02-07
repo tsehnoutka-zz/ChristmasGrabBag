@@ -1,0 +1,17 @@
+/*
+ ============================================================================
+ Name        : ChristmasGrabBag.c
+ Author      : Tim Edwards
+ Version     :
+ Copyright   : BE NICE!
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	puts("Christmas Grab Bag"); /* prints Christmas Grab Bag */
+	return EXIT_SUCCESS;
+}
